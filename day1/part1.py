@@ -7,21 +7,21 @@ initialPosition = 50
 
 for line in lines:
     
-    line = line.strip()  # Remove newline characters
+    line = line.strip()
     direction = line[0]
     rotation = int(line[1:]) % 100
     
     if direction == "L":
-        print("Turn left")
-        initialPosition = (initialPosition - rotation) % 100
+        if(initialPosition - rotation < 0):
+            initialPosition = initialPosition + 100 - rotation
+        else: initialPosition -= rotation
     
     else:
-        print("Turn right")
-        initialPosition = (initialPosition + rotation) % 100
+        if(initialPosition + rotation > 99):
+            initialPosition = initialPosition - 100 + rotation
+        else: initialPosition += rotation
     
     if initialPosition == 0:
         numberOfTimesPointedAtZero+=1
-
-    print("Current Position: %d" %initialPosition)
 
 print("Number of times pointed as zero: %d" %numberOfTimesPointedAtZero)
