@@ -2,10 +2,8 @@ def isNumberInvalid(number):
     stringifyNumber = str(number)
     
     halfOfNumber = len(stringifyNumber) // 2
-    firstHalfOfNumber = int(stringifyNumber[:halfOfNumber])
-    secondHalfOfNumber = int(stringifyNumber[halfOfNumber:])
 
-    return firstHalfOfNumber == secondHalfOfNumber    
+    return stringifyNumber[:halfOfNumber] == stringifyNumber[halfOfNumber:]
 
 fileReader = open("day2/input.txt", "r")
 textLine = fileReader.read()
