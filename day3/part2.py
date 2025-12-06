@@ -4,8 +4,11 @@ biggestJoltage = 0
 lengthOfBank = None
 biggestJoltage = 0
 
-def findLargestJoltageForBank(bank, remainingCalls):
+def findLargestJoltageForBank(bank, listOfJoltages):
     for i in range(lengthOfBank):
+        if(remainingCalls == lengthOfBank):
+            return sum
+            
 
 fileReader = open("day3/input.txt", "r")
 textLine = fileReader.readlines()
