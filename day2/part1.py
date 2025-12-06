@@ -1,3 +1,5 @@
+import time
+
 def isNumberInvalid(number):    
     stringifyNumber = str(number)
     
@@ -13,6 +15,8 @@ intervals = textLine.split(",")
 
 sumOfInvalidNumbers = 0
 
+start = time.time()
+
 for interval in intervals:
     intervalNumbers = interval.split("-")
     startOfInterval = int(intervalNumbers[0])
@@ -22,5 +26,9 @@ for interval in intervals:
         if len(str(number)) % 2 == 0:
             if isNumberInvalid(number):
                 sumOfInvalidNumbers += number
+                
+end = time.time()
+
+print(f"Calculation finished in {end - start:.4f} seconds.")
                 
 print(f"Sum of invalid numbers: {sumOfInvalidNumbers}")
