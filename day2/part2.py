@@ -1,3 +1,5 @@
+import time
+
 def splitIntoChunks(number, n):
     stringifyNumber = str(number)
     
@@ -42,6 +44,7 @@ sumOfInvalidNumbers = 0
 listOfInvalidNumbers = []
 
 print(f"Calculating...")
+start = time.time()
 
 for interval in intervals:
     intervalNumbers = interval.split("-")
@@ -52,5 +55,9 @@ for interval in intervals:
         if isNumberInvalid(number):
             listOfInvalidNumbers.append(number)
             sumOfInvalidNumbers += number
+            
+end = time.time()
+
+print(f"Calculation finished in {end - start:.4f} seconds.")
                 
 print(f"Sum of invalid numbers: {sumOfInvalidNumbers}")
