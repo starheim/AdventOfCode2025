@@ -11,15 +11,13 @@ def findLargestJoltageForBank(bank, listOfJoltages, biggestJoltage):
     if(len(listOfJoltages) < MAX_BATTERIES):
         for i in range(0, len(bank)):
             print(f"Bank[0] = {bank[0]}")
-            listOfJoltages.append(bank[0])
-            findLargestJoltageForBank(bank[i + 1:], listOfJoltages + bank[i-1], biggestJoltage) 
+            findLargestJoltageForBank(bank[i + 1:], listOfJoltages + [bank[i-1]], biggestJoltage) 
     
     else:
         currentJoltage = sum(listOfJoltages)
         if(currentJoltage > biggestJoltage):
             biggestJoltage = currentJoltage
         return
-
 
 fileReader = open("day3/input.txt", "r")
 textLine = fileReader.readlines()
