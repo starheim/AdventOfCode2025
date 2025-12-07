@@ -9,7 +9,7 @@ def findLargestJoltageForBank(bank, listOfJoltages, biggestJoltage):
     print(f"List of joltages: {listOfJoltages}")
     print(f"Length og listOfJoltages: {len(listOfJoltages)}")
     if(len(listOfJoltages) < MAX_BATTERIES):
-        for i in range(0, len(bank)):
+        for i in range(0, len(bank) - (MAX_BATTERIES - len(listOfJoltages)) + 1):
             print(f"Bank[0] = {bank[0]}")
             findLargestJoltageForBank(bank[i + 1:], listOfJoltages + [bank[i-1]], biggestJoltage) 
     
